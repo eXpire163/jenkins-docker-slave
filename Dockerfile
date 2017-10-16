@@ -5,9 +5,9 @@ MAINTAINER Bibin Wilson <bibinwilsonn@gmail.com>
 RUN apt-get update
 RUN apt-get install -y git
 # Install a basic SSH server
-#RUN apt-get install -y openssh-server
-#RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd
-#RUN mkdir -p /var/run/sshd
+RUN apt-get install -y openssh-server
+RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd
+RUN mkdir -p /var/run/sshd
 
 USER root
 RUN apt-get update && apt-get install subversion locales
