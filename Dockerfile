@@ -10,7 +10,7 @@ RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pa
 RUN mkdir -p /var/run/sshd
 
 USER root
-RUN apt-get update && apt-get install -y subversion locales
+RUN apt-get update && apt-get install -y subversion locales maven
 
 
 # add ibm java
@@ -84,7 +84,7 @@ RUN mkdir /home/jenkins/.m2
 
 RUN chown -R jenkins:jenkins /home/jenkins/.m2/ 
 
-RUN apt-get install -y maven
+
 # Standard SSH port
 EXPOSE 22
 
