@@ -84,6 +84,7 @@ RUN mkdir /home/jenkins/.m2
 
 RUN chown -R jenkins:jenkins /home/jenkins/.m2/ 
 
+ADD ant-contrib-1.0b3.jar /home/jenkins/
 
 # Standard SSH port
 EXPOSE 22
