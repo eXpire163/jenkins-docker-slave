@@ -85,7 +85,7 @@ RUN mkdir /home/jenkins/.m2
 RUN chown -R jenkins:jenkins /home/jenkins/.m2/ 
 
 
-ADD https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.5.0/apache-maven-3.5.0-bin.zip /var/ant/
+ADD https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.5.0/apache-maven-3.5.0-bin.tar.gz /var/ant/
 ADD ant-contrib-1.0b3.jar /var/ant/lib/
 ENV ANT_HOME=/var/ant/
 
