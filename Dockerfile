@@ -10,7 +10,7 @@ RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pa
 RUN mkdir -p /var/run/sshd
 
 USER root
-RUN apt-get update && apt-get install subversion locales
+RUN apt-get update && apt-get install -y subversion locales
 
 
 # add ibm java
