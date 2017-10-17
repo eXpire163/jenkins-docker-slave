@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Bibin Wilson <bibinwilsonn@gmail.com>
 
 # Make sure the package repository is up to date.
