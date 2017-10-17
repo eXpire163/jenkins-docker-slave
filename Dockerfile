@@ -84,7 +84,17 @@ RUN mkdir /home/jenkins/.m2
 
 RUN chown -R jenkins:jenkins /home/jenkins/.m2/ 
 
-ADD ant-contrib-1.0b3.jar /home/jenkins/
+
+ADD https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.5.0/apache-maven-3.5.0-bin.zip /var/ant/
+ADD ant-contrib-1.0b3.jar /var/ant/lib/
+ENV ANT_HOME=/var/ant/
+
+ENV IBM_JAVA_1_6_HOME=/opt/ibm/java
+ENV IBM_JAVA_1_6_ENDORSED=/var/share/endorsed_apis
+ENV mvnsettings=/var/share/mvnsettings.xml
+ENV JAVA_HOME=/opt/ibm/java
+
+
 
 # Standard SSH port
 EXPOSE 22
