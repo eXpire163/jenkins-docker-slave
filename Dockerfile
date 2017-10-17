@@ -10,7 +10,7 @@ RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pa
 RUN mkdir -p /var/run/sshd
 
 USER root
-RUN apt-get update && apt-get install -y subversion locales maven
+RUN apt-get update && apt-get install -y subversion locales maven ant ant-contrib
 
 
 # add ibm java
@@ -85,9 +85,9 @@ RUN mkdir /home/jenkins/.m2
 RUN chown -R jenkins:jenkins /home/jenkins/.m2/ 
 
 
-ADD https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.5.0/apache-maven-3.5.0-bin.tar.gz /var/ant/
-ADD ant-contrib-1.0b3.jar /var/ant/lib/
-ENV ANT_HOME=/var/ant/
+# ADD https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.5.0/apache-maven-3.5.0-bin.tar.gz /var/ant/
+# ADD ant-contrib-1.0b3.jar /var/ant/lib/
+# ENV ANT_HOME=/var/ant/
 
 ENV IBM_JAVA_1_6_HOME=/opt/ibm/java
 ENV IBM_JAVA_1_6_ENDORSED=/var/share/endorsed_apis
