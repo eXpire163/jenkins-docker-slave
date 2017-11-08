@@ -61,7 +61,9 @@ RUN set -eux; \
     /tmp/ibm-java.bin -i silent -f /tmp/response.properties; \
     rm -f /tmp/response.properties; \
     rm -f /tmp/index.yml; \
-    rm -f /tmp/ibm-java.bin;
+    rm -f /tmp/ibm-java.bin; \
+    cd /opt/ibm/java/jre/lib; \
+    rm -rf icc;
     
 
 #end add ibm java
