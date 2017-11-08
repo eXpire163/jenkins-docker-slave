@@ -65,7 +65,7 @@ RUN set -eux; \
     cd /opt/ibm/java/jre/lib; \
     rm -rf icc;
     
-
+    
 #end add ibm java
 
 #RUN sed -i -e 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen && \
