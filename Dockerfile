@@ -10,7 +10,7 @@ RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pa
 RUN mkdir -p /var/run/sshd
 
 USER root
-RUN apt-get update && apt-get install -y subversion locales maven ant ant-contrib dos2unix
+RUN apt-get update && apt-get install -y subversion locales maven ant ant-contrib dos2unix 
 
 
 # add ibm java
