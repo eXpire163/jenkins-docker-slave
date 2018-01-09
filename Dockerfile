@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER Bibin Wilson <bibinwilsonn@gmail.com>
 
-# Make sure the package repository is up to date.
+# Make sure the package repository is up to date. please rebuild
 RUN apt-get update
 RUN apt-get install -y git
 # Install a basic SSH server
