@@ -11,10 +11,11 @@ RUN mkdir -p /var/run/sshd
 
 USER root
 
-RUN apt-get remove docker docker-engine docker.io
+
 
 # guide from https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#set-up-the-repository
-RUN apt-get update && apt-get install -y subversion locales maven ant ant-contrib dos2unix apt-transport-https \
+RUN apt-get remove docker docker-engine docker.io
+RUN apt-get update && apt-get install -y apt-transport-https \
     ca-certificates \
     curl \
     software-properties-common
@@ -26,7 +27,7 @@ RUN add-apt-repository \
    $(lsb_release -cs) \
    stable"
 
-RUN apt-get update && apt-get install docker-ce
+RUN apt-get update && apt-get install -y docker-ce
 
 
 
