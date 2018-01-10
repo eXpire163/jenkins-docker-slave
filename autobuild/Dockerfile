@@ -1,0 +1,34 @@
+FROM ubuntu:16.04
+MAINTAINER Bibin Wilson <bibinwilsonn@gmail.com>
+
+# Make sure the package repository is up to date.
+RUN apt-get update
+RUN apt-get install -y git
+# Install a basic SSH server
+RUN apt-get install -y openssh-server
+RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd
+RUN mkdir -p /var/run/sshd
+
+USER root
+RUN apt-get update && apt-get install -y subversion locales maven ant ant-contrib dos2unix docker-ce
+
+
+
+# Add user jenkins to the image
+RUN adduser --quiet jenkins
+# Set password for the jenkins user (you may want to alter this).
+RUN echo "jenkins:jenkins" | chpasswd
+
+RUN mkdir /home/jenkins/.m2
+
+# ADD settings.xml /home/jenkins/.m2/
+
+RUN chown -R jenkins:jenkins /home/jenkins/.m2/ 
+
+
+
+
+# Standard SSH port
+EXPOSE 22
+
+CMD ["/usr/sbin/sshd", "-D"]
