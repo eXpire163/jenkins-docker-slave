@@ -46,6 +46,7 @@ RUN chown -R jenkins:jenkins /home/jenkins/.m2/
 
 RUN usermod -aG sudo jenkins
 
+RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # Standard SSH port
 EXPOSE 22
