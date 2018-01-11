@@ -18,7 +18,8 @@ RUN apt-get remove docker docker-engine docker.io
 RUN apt-get update && apt-get install -y apt-transport-https \
     ca-certificates \
     curl \
-    software-properties-common
+    software-properties-common \
+    sudo
 
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 RUN apt-key fingerprint 0EBFCD88
@@ -43,9 +44,9 @@ RUN mkdir /home/jenkins/.m2
 
 RUN chown -R jenkins:jenkins /home/jenkins/.m2/ 
 
-
+RUN usermod -aG sudo jenkins
 
 
 # Standard SSH port
 EXPOSE 22
-CMD ["chmod 0777 /var/run/docker.sock && /usr/sbin/sshd -D"]
+CMD ["/usr/sbin/sshd" "-D"]
