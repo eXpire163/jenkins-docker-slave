@@ -48,5 +48,5 @@ RUN chown -R jenkins:jenkins /home/jenkins/.m2/
 
 # Standard SSH port
 EXPOSE 22
-
+ENTRYPOINT ["chmod", "0777", "/var/run/docker.sock"]
 CMD ["/usr/sbin/sshd", "-D"]
