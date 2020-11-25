@@ -8,7 +8,7 @@ Based on an ssh version of an old jenkins agent from beginning of docker, a new 
 
 ## why
 
-sick of calling 'docker run node /bin/npm build' all over the pipelines
+sick of calling `docker run node /bin/npm build` all over the pipelines
 
 ## whats inside
 
