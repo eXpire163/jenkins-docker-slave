@@ -107,7 +107,7 @@ RUN curl -L ${HELM_BASE_URL}/${HELM_TAR_FILE} | tar xvz && \
     rm -rf linux-amd64 && \
     helm version
 
-# Install java 11
+# Install java 8
 RUN apt-get install -y openjdk-8-jre-headless
 
 # Install skopeo for Docker image magics
