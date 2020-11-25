@@ -2,6 +2,9 @@ FROM ubuntu:latest
 
 # Make sure the package repository is up to date. please rebuild
 
+ARG http_proxy
+ARG https_proxy
+ARG no_proxy
 
 ARG DEBIAN_FRONTEND=noninteractive
 
