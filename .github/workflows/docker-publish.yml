@@ -74,3 +74,6 @@ jobs:
 
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
+          DATE_TAG=$(date +'%Y-%m-%d')
+          docker tag $IMAGE_NAME $IMAGE_ID:$DATE_TAG
+          docker push $IMAGE_ID:$DATE_TAG
