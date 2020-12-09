@@ -106,6 +106,18 @@ RUN curl -L ${HELM_BASE_URL}/${HELM_TAR_FILE} | tar xvz && \
     chmod +x /usr/bin/helm && \
     rm -rf linux-amd64 && \
     helm version
+    
+# Install github cli
+https://github.com/cli/cli/releases/download/v1.3.1/gh_1.3.1_linux_amd64.tar.gz
+ENV GITHUB_VERSION=1.3.1
+ENV GITHUB_BASE_URL="https://github.com/cli/cli/releases/download/v${GITHUB_VERSION}"
+ENV GITHUB_TAR_FILE="gh_${GITHUB_VERSION}_linux_amd64.tar.gz"
+
+RUN curl -L ${GITHUB_BASE_URL}/${GITHUB_TAR_FILE} | tar xvz && \
+    mv gh_${GITHUB_VERSION}_linux_amd64/bin/gh /usr/bin/gh && \
+    chmod +x /usr/bin/gh && \
+    rm -rf linux-amd64 && \
+    gh version
 
 # Install java 8
 RUN apt-get install -y openjdk-8-jre-headless
