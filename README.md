@@ -2,6 +2,12 @@
 
 ## links
 
+all packages:  https://github.com/eXpire163/jenkins-docker-slave/packages/533818/versions
+
+latest: `docker pull docker.pkg.github.com/expire163/jenkins-docker-slave/jenkins-devops-agent:latest`
+
+old: 
+
 dockerhub: https://hub.docker.com/r/expire163/jenkins-docker-slave
 
 pull: `docker pull expire163/jenkins-docker-slave`
