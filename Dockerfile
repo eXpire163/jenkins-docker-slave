@@ -108,7 +108,7 @@ RUN curl -L ${HELM_BASE_URL}/${HELM_TAR_FILE} | tar xvz && \
     helm version
     
 # Install github cli
-https://github.com/cli/cli/releases/download/v1.3.1/gh_1.3.1_linux_amd64.tar.gz
+#https://github.com/cli/cli/releases/download/v1.3.1/gh_1.3.1_linux_amd64.tar.gz
 ENV GITHUB_VERSION=1.3.1
 ENV GITHUB_BASE_URL="https://github.com/cli/cli/releases/download/v${GITHUB_VERSION}"
 ENV GITHUB_TAR_FILE="gh_${GITHUB_VERSION}_linux_amd64.tar.gz"
