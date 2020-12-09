@@ -1,5 +1,10 @@
 # jenkins agent for devops on aws
 
+## links
+
+dockerhub: https://hub.docker.com/r/expire163/jenkins-docker-slave
+pull: `docker pull expire163/jenkins-docker-slave`
+
 ## what
 
 Based on an ssh version of an old jenkins agent from beginning of docker, a new agent is now there.
