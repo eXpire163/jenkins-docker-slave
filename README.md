@@ -33,6 +33,7 @@ sick of calling `docker run node /bin/npm build` all over the pipelines
 - aws-cli
 - aws-iam-authenticator
 - amazon-ecr-credential-helper-releases
+- github cli
 - *java 8 for jenkins counter part - might change*
 
 
